@@ -1,0 +1,12 @@
+# ==========================================
+# Configuration Cron pour la sauvegarde
+# ==========================================
+# Format : minute heure jour-du-mois mois jour-de-la-semaine commande
+#
+# Exemple : Tous les jours à 02h00 du matin
+0 2 * * * /home/abdou/devops-test/backup-directory.sh >> /home/abdou/backups/backup.log 2>&1
+
+# Explication :
+# - "0 2 * * *" signifie "à 2h00 du matin, tous les jours".
+# - La commande exécute le script.
+# - ">> /home/abdou/backups/backup.log 2>&1" redirige la sortie et les erreurs vers un fichier log.
