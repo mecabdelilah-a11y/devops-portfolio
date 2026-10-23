@@ -1,0 +1,24 @@
+name: Test Security Sentinel
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Vérifier la syntaxe du script Bash
+      run: |
+        bash -n security-sentinel/bin/sentinel.sh
+
+    - name: Construire l'image Docker
+      run: |
+        cd security-sentinel
+        docker build -t security-sentinel .
