@@ -30,3 +30,28 @@ Ce dossier documente mes laboratoires pratiques et mes déploiements sur Microso
 - **Diagnostic** : Restriction de SKU au niveau de l'abonnement Azure for Students, indépendante du quota vCPU et des régions autorisées par la Policy [citation:9][citation:15].
 - **Action entreprise** : Ouverture d'une demande de support Microsoft pour vérifier l'éligibilité des SKU.
 - **Compétence** : Compréhension de la différence entre quota, capacité régionale et restriction de SKU sur un abonnement Cloud.
+
+### Lab 03 : Déploiement d'une VM Windows Server via Azure CLI (Contournement de restrictions étudiantes)
+
+- **Objectif** : Déployer une VM Windows Server 2022 pour pratiquer l'administration à distance (RDP) et la gestion des services.
+- **Problème rencontré** : Le portail graphique Azure bloquait la création de la VM avec l'erreur `NotAvailableForSubscription` pour toutes les tailles gratuites (B-Series v2) dans plusieurs régions (Germany West Central, Spain Central, Austria East, Denmark East).
+- **Diagnostic** : 
+  - Restrictions de SKU au niveau de l'abonnement Azure for Students.
+  - Saturation de capacité dans la zone 3 de la région `SpainCentral`.
+- **Solution** : Utilisation d'Azure Cloud Shell (CLI) pour forcer le déploiement avec les paramètres suivants :
+  - **Région** : `spaincentral`
+  - **Zone** : `1` (contournement de la zone 3 saturée)
+  - **Taille** : `Standard_B2ats_v2`
+  - **Image** : `MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest`
+- **Commande utilisée** :
+  ```bash
+  az vm create \
+    --resource-group RG-Formation-Azure \
+    --name VM-WIN-LAB01 \
+    --location spaincentral \
+    --zone 1 \
+    --size Standard_B2ats_v2 \
+    --image MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest \
+    --admin-username azureadmin \
+    --admin-password "***" \
+    --public-ip-sku Standard
