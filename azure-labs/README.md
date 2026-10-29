@@ -51,6 +51,8 @@ Ce dossier documente mes laboratoires pratiques et mes déploiements sur Microso
     --location spaincentral \
     --zone 1 \
     --size Standard_B2ats_v2 \
+
+  ![VM Azure en cours d'exécution](lab03-vm-running.png)
     --image MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest \
     --admin-username azureadmin \
     --admin-password "***" \
