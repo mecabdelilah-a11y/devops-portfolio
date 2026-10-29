@@ -72,3 +72,17 @@ Ce dossier documente mes laboratoires pratiques et mes déploiements sur Microso
     --admin-username azureadmin \
     --admin-password "***" \
     --public-ip-sku Standard
+
+
+### Lab 06 : Déploiement d'une VM Linux et Serveur Web Nginx
+
+- **Objectif** : Déployer une VM Ubuntu sur Azure et installer un serveur web Nginx.
+- **Ressources déployées** :
+  - VM `VM-LINUX-LAB01` (Ubuntu 22.04 LTS, Standard_B2ats_v2).
+  - IP publique : `68.221.175.9`.
+- **Actions réalisées** :
+  - Déploiement via Azure CLI avec génération automatique de clés SSH.
+  - Connexion SSH sécurisée depuis Azure Cloud Shell.
+  - Installation de Nginx via `apt`.
+  - Vérification du service avec `systemctl status nginx` (actif et en cours d'exécution).
+- **Compétence acquise** : Administration de serveurs Linux dans le Cloud et gestion de services web.
