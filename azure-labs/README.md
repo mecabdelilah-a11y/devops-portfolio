@@ -53,6 +53,21 @@ Ce dossier documente mes laboratoires pratiques et mes déploiements sur Microso
     --size Standard_B2ats_v2 \
 
   ![VM Azure en cours d'exécution](lab03-vm-running.png)
+
+
+  ### Lab 05 : Contrôleur de Domaine et Automatisation PowerShell
+
+- **Infrastructure** :
+  - VM Windows Server 2022 (Standard_B2ats_v2) déployée via Azure CLI dans la zone 1 de `spaincentral`.
+  - Réseau virtuel `VNET-Formation` avec sous-réseau `SUBNET-SERVERS` (10.0.1.0/24).
+- **Configuration** :
+  - Promotion de la VM en Contrôleur de Domaine pour la forêt `lab.local`.
+  - Configuration IP statique (10.0.0.4) et DNS local.
+- **Automatisation** :
+  - Création de l'OU `Lab-Users` et de 15 utilisateurs (`User01` à `User15`) via un script PowerShell.
+- **Validation** :
+  - Vérification de l'annuaire avec `Get-ADDomain` et `Get-ADUser`.
+- **Compétence acquise** : Déploiement et administration d'un annuaire Active Directory dans le Cloud (Azure IaaS).
     --image MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest \
     --admin-username azureadmin \
     --admin-password "***" \
