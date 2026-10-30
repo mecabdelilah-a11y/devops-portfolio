@@ -86,3 +86,16 @@ Ce dossier documente mes laboratoires pratiques et mes déploiements sur Microso
   - Installation de Nginx via `apt`.
   - Vérification du service avec `systemctl status nginx` (actif et en cours d'exécution).
 - **Compétence acquise** : Administration de serveurs Linux dans le Cloud et gestion de services web.
+
+### Lab 09 : Azure Storage - Compte de stockage et partage de fichiers
+
+- **Objectif** : Créer un compte de stockage Azure et y uploader un fichier.
+- **Ressources créées** :
+  - Compte de stockage : `stockageabdelilah2026` (Type : FileStorage, Région : Spain Central)
+  - Partage de fichiers : `captures-lab` (5 Go)
+- **Actions réalisées** :
+  - Création du compte de stockage via le portail Azure.
+  - Création du partage de fichiers via Azure CLI (`az storage share create`).
+  - Upload d'un fichier via Azure CLI (`az storage file upload`), avec chiffrement côté serveur.
+  - Vérification avec `az storage file list`.
+- **Compétence acquise** : Gestion du stockage Cloud (Azure Files) et utilisation de l'Azure CLI pour contourner les limitations du portail web.
