@@ -99,3 +99,10 @@ Ce dossier documente mes laboratoires pratiques et mes déploiements sur Microso
   - Upload d'un fichier via Azure CLI (`az storage file upload`), avec chiffrement côté serveur.
   - Vérification avec `az storage file list`.
 - **Compétence acquise** : Gestion du stockage Cloud (Azure Files) et utilisation de l'Azure CLI pour contourner les limitations du portail web.
+
+- ### Lab 10 : Sécurisation d'un compte de stockage Azure
+
+- **Objectif** : Restreindre l'accès public au compte de stockage.
+- **Action** : Configuration du pare-feu de stockage pour n'autoriser que l'adresse IP du client (196.74.246.56) et les services Microsoft approuvés.
+- **Résultat** : Le compte de stockage n'est plus accessible depuis Internet, sauf depuis l'adresse IP autorisée.
+- **Compétence acquise** : Mise en œuvre des bonnes pratiques de sécurité Azure (restriction réseau, principe du moindre privilège).
